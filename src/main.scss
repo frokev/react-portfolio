@@ -1,0 +1,16 @@
+// Global Variables (Theme)
+// Colors
+$primary-color: #d1a643;
+$lightShade-color: #f0f2ec;
+$lightAccent-color: #828583;
+$darkShade-color: #473f44;
+$darkAccent-color: #944931;
+
+//fonts
+$primary-font: "Roboto";
+$code-font: "Maven Pro";
+$brand-font: "Frank Ruhl Libre";
+
+// Imports
+@import "./containers/Navbar.scss";
+@import "./containers/test.scss";

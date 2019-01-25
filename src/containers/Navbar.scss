@@ -1,0 +1,40 @@
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  column-gap: 20px;
+  padding: 0 20px 0 20px;
+  background-color: $primary-color;
+
+  .drawer-icon {
+    display: none;
+    grid-column: 1 / span 1;
+    justify-self: center;
+    align-self: center;
+
+    @media only screen and (max-width: 1000px) {
+      display: block;
+    }
+  }
+
+  .brand {
+    font-family: $brand-font;
+    color: darken($darkAccent-color, 10%);
+    grid-column: 2 / span 3;
+  }
+
+  .buttons-wrapper {
+    grid-column: 5 / span 5;
+    justify-self: center;
+    border-left: 1px solid $darkShade-color;
+
+    button {
+      background-color: $primary-color;
+      color: $darkShade-color;
+      border-left: 1px solid $darkShade-color;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+}

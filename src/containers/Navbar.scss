@@ -1,18 +1,52 @@
 .navbar {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   column-gap: 20px;
   padding: 0 20px 0 20px;
-  background-color: $primary-color;
+
+  .navbar-background {
+    grid-column: 1 / span 13;
+    grid-row: 1/1;
+    z-index: -1;
+    margin: 0 -20px 0 -20px;
+    background-color: $primary-color;
+    min-height: 60px;
+  }
 
   .drawer-icon {
-    display: none;
     grid-column: 1 / span 1;
-    justify-self: center;
+    grid-row: 1;
+    display: none;
+    visibility: hidden;
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 32px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
     align-self: center;
+    color: $darkShade-color;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
 
     @media only screen and (max-width: 1000px) {
       display: block;
+      visibility: visible;
     }
   }
 
@@ -20,21 +54,112 @@
     font-family: $brand-font;
     color: darken($darkAccent-color, 10%);
     grid-column: 2 / span 3;
+    grid-row: 1;
+    align-self: center;
+    margin: auto;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 1400px) {
+      grid-column: 1 / span 3;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      grid-column: 1 / span 13;
+      justify-content: center;
+    }
   }
 
   .buttons-wrapper {
-    grid-column: 5 / span 5;
+    display: flex;
+    grid-column: 1 / span 13;
+    grid-row: 1;
     justify-self: center;
-    border-left: 1px solid $darkShade-color;
+    align-self: stretch;
+    align-items: stretch;
+    height: auto;
+    z-index: 1;
 
     button {
+      font-family: $primary-font;
+      font-size: 14px;
       background-color: $primary-color;
       color: $darkShade-color;
+      width: 86px;
+      border: 0;
       border-left: 1px solid $darkShade-color;
+
+      &:nth-last-child(1) {
+        border-right: 1px solid $darkShade-color;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: darken($primary-color, 10%);
+        outline: none;
+      }
     }
 
     @media only screen and (max-width: 1000px) {
       display: none;
+    }
+  }
+
+  .drawer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+
+    .drawer-menu {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: stretch;
+      background-color: $primary-color;
+      width: 70%;
+      z-index: 2;
+
+      button {
+        font-family: $primary-font;
+        font-size: 14px;
+        background-color: $primary-color;
+        color: $darkShade-color;
+        border: 0;
+        border-top: 1px solid $darkShade-color;
+        height: 60px;
+
+        &:nth-last-child(1) {
+          border-bottom: 1px solid $darkShade-color;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: darken($primary-color, 10%);
+          outline: none;
+        }
+      }
+    }
+
+    .drawer-tapout-area {
+      $bg-color: black;
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($bg-color, 0.5);
+      animation: fadeIn 500ms ease-in;
+      z-index: 1;
+
+      @keyframes fadeIn {
+        0% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: rgba($bg-color, 0.5);
+        }
+      }
     }
   }
 }

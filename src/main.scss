@@ -7,10 +7,23 @@ $darkShade-color: #473f44;
 $darkAccent-color: #944931;
 
 //fonts
-$primary-font: "Roboto";
-$code-font: "Maven Pro";
-$brand-font: "Frank Ruhl Libre";
+$primary-font: "Roboto", sans-serif;
+$code-font: "Maven Pro", serif;
+$brand-font: "Frank Ruhl Libre", sans-serif;
 
-// Imports
+// Global styles (!important is ok for utility classes who's sole purpose is to override; e.g. a clearfix)
+.inactive {
+  display: none !important;
+}
+
+// Icons
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+// Font imports
+@import url("https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre|Maven+Pro|Roboto");
+
+// Animate.css (opensource MIT licence)
+@import "~animate.css/animate.min.css";
+
+// Component styles imports
 @import "./containers/Navbar.scss";
-@import "./containers/test.scss";

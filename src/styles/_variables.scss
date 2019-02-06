@@ -1,0 +1,32 @@
+:root {
+  --test-color: red;
+  --primary-color: #d1a643;
+  --lightShade-color: #f0f2ec;
+  --lightAccent-color: #828583;
+  --darkShade-color: #473f44;
+  --darkAccent-color: #944931;
+
+  --primary-font: "Roboto", sans-serif;
+  --code-font: "Maven Pro", serif;
+  --brand-font: "Frank Ruhl Libre", sans-serif;
+}
+
+// Colors
+$primary-color: var(--primary-color);
+$lightShade-color: var(--lightShade-color);
+$lightAccent-color: var(--lightAccent-color);
+$darkShade-color: var(--darkShade-color);
+$darkAccent-color: var(--darkAccent-color);
+
+// Fonts
+$primary-font: var(--primary-font);
+$code-font: var(--code-font);
+$brand-font: var(--brand-font);
+
+:export {
+  primaryColor: $primary-color;
+  lightShadeColor: $lightShade-color;
+  lightAccentColor: $lightAccent-color;
+  darkShadeColor: $darkShade-color;
+  darkAccentColor: $darkAccent-color;
+}

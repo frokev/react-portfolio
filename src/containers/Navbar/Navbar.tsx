@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 
-interface IProps {}
+interface IProps {
+  children?: React.ReactNode;
+}
 
 interface IState {
   drawerState: number;
@@ -14,7 +16,7 @@ enum DrawerState {
 }
 
 export default class Navbar extends Component<IProps, IState> {
-  constructor(props: any) {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {

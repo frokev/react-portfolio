@@ -52,7 +52,8 @@
 
   .brand {
     font-family: $brand-font;
-    color: darken($darkAccent-color, 10%);
+    color: $darkAccent-color;
+    filter: brightness(70%);
     grid-column: 2 / span 3;
     grid-row: 1;
     align-self: center;
@@ -94,7 +95,8 @@
 
       &:hover,
       &:focus {
-        background-color: darken($primary-color, 10%);
+        background-color: $primary-color;
+        filter: brightness(90%);
         outline: none;
       }
     }
@@ -136,7 +138,8 @@
 
         &:hover,
         &:focus {
-          background-color: darken($primary-color, 10%);
+          background-color: $primary-color;
+          filter: brightness(90%);
           outline: none;
         }
       }

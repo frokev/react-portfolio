@@ -1,0 +1,49 @@
+.about-slide {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: $darkShade-darker-color;
+  font-family: $primary-font;
+  color: $lightShade-color;
+  position: fixed;
+  left: 0;
+  width: 470px;
+  z-index: 10;
+
+  .title {
+    font-family: $primary-font;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .image {
+    height: 305px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 40px;
+  }
+
+  .paragraph {
+    height: 260px;
+    width: 420px;
+    text-align: start;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .button {
+    position: absolute;
+    bottom: calc(72px + 20px);
+    height: 72px;
+    width: 420px;
+    background-color: $primary-color;
+    font-weight: 400;
+    font-size: 20px;
+    color: $darkShade-color;
+  }
+}

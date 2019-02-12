@@ -1,10 +1,23 @@
 :root {
-  --test-color: red;
   --primary-color: #d1a643;
+  --primary-lighter-color: #f2c96d;
+  --primary-darker-color: #b28724;
+
   --lightShade-color: #f0f2ec;
+  --lightShade-lighter-color: #fbfbfb;
+  --lightShade-darker-color: #d6dbcb;
+
   --lightAccent-color: #828583;
+  --lightAccent-lighter-color: #a3a5a4;
+  --lightAccent-darker-color: #636865;
+
   --darkShade-color: #473f44;
+  --darkShade-lighter-color: #6d6269;
+  --darkShade-darker-color: #1a1619;
+
   --darkAccent-color: #944931;
+  --darkAccent-lighter-color: #b36951;
+  --darkAccent-darker-color: #6f2b15;
 
   --primary-font: "Roboto", sans-serif;
   --code-font: "Maven Pro", serif;
@@ -13,10 +26,24 @@
 
 // Colors
 $primary-color: var(--primary-color);
+$primary-lighter-color: var(--primary-lighter-color);
+$primary-darker-color: var(--primary-darker-color);
+
 $lightShade-color: var(--lightShade-color);
+$lightShade-lighter-color: var(--lightShade-lighter-color);
+$lightShade-darker-color: var(--lightShade-darker-color);
+
 $lightAccent-color: var(--lightAccent-color);
+$lightAccent-lighter-color: var(--lightAccent-lighter-color);
+$lightAccent-darker-color: var(--lightAccent-darker-color);
+
 $darkShade-color: var(--darkShade-color);
+$darkShade-lighter-color: var(--darkShade-lighter-color);
+$darkShade-darker-color: var(--darkShade-darker-color);
+
 $darkAccent-color: var(--darkAccent-color);
+$darkAccent-lighter-color: var(--darkAccent-lighter-color);
+$darkAccent-darker-color: var(--darkAccent-darker-color);
 
 // Fonts
 $primary-font: var(--primary-font);

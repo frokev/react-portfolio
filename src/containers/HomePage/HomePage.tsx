@@ -6,6 +6,7 @@ import Icon, { EIcon } from "../../components/Icon";
 import * as Typewriter from "react-typewriter";
 import TypeWriterSequencer from "../../components/TypeWriterSequencer";
 import Footer from "../Footer/Footer";
+import AboutSlide from "../AboutSlide/AboutSlide";
 
 export interface Props {
   children?: React.ReactNode;

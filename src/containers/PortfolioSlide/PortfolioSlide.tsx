@@ -1,11 +1,23 @@
 import React, { Component } from "react";
 import portfolioImage from "../../assets/portfolio-img.jpg";
+import { throttle } from "lodash";
 
 export default class PortfolioSlide extends Component {
+  state = {
+    className: "portfolio-slide",
+    display: { display: "none" }
+  };
+
   render() {
     return (
-      <div className="portfolio-slide">
+      <div className={this.state.className} style={this.state.display}>
         <h1 className="title">Portfolio</h1>
+        <div className="portfolio-card">
+          <img src={portfolioImage} alt="" className="image" />
+          <div className="title-shade">
+            <h2 className="card-title">Best project ever</h2>
+          </div>
+        </div>
         <div className="portfolio-card">
           <img src={portfolioImage} alt="" className="image" />
           <div className="title-shade">
@@ -16,4 +28,26 @@ export default class PortfolioSlide extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    window.addEventListener("wheel", throttle(this.handleScroll, 300));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("wheel", throttle(this.handleScroll, 300));
+  }
+
+  handleScroll = (event: any) => {
+    if (window.innerWidth < 1000 || window.innerHeight < 850) return;
+    if (event.deltaY < 0) {
+      this.setState({
+        className: "portfolio-slide animated slideOutRight"
+      });
+    } else {
+      this.setState({
+        className: "portfolio-slide animated slideInRight",
+        display: { display: "flex" }
+      });
+    }
+  };
 }

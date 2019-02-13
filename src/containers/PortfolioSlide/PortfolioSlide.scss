@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  background-color: $darkShade-darker-color;
+  background-color: rgba($darkShade-darker-color, 0.8);
   font-family: $primary-font;
   color: $lightShade-color;
   position: absolute;
@@ -28,6 +28,11 @@
     border-radius: 25px;
     margin-bottom: 40px;
     overflow: hidden;
+
+    &:hover {
+      border-color: $primary-color;
+      cursor: pointer;
+    }
 
     .image {
       width: 100%;
@@ -67,6 +72,7 @@
     &:hover,
     &:focus {
       outline: none;
+      cursor: pointer;
       filter: brightness(90%);
     }
   }

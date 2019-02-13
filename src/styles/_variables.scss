@@ -1,59 +1,25 @@
-:root {
-  --primary-color: #d1a643;
-  --primary-lighter-color: #f2c96d;
-  --primary-darker-color: #b28724;
-
-  --lightShade-color: #f0f2ec;
-  --lightShade-lighter-color: #fbfbfb;
-  --lightShade-darker-color: #d6dbcb;
-
-  --lightAccent-color: #828583;
-  --lightAccent-lighter-color: #a3a5a4;
-  --lightAccent-darker-color: #636865;
-
-  --darkShade-color: #473f44;
-  --darkShade-lighter-color: #6d6269;
-  --darkShade-darker-color: #1a1619;
-
-  --darkAccent-color: #944931;
-  --darkAccent-lighter-color: #b36951;
-  --darkAccent-darker-color: #6f2b15;
-
-  --primary-font: "Roboto", sans-serif;
-  --code-font: "Maven Pro", serif;
-  --brand-font: "Frank Ruhl Libre", sans-serif;
-}
-
 // Colors
-$primary-color: var(--primary-color);
-$primary-lighter-color: var(--primary-lighter-color);
-$primary-darker-color: var(--primary-darker-color);
+$primary-color: rgb(209, 166, 67);
+$primary-lighter-color: rgb(242, 201, 109);
+$primary-darker-color: rgb(178, 135, 36);
 
-$lightShade-color: var(--lightShade-color);
-$lightShade-lighter-color: var(--lightShade-lighter-color);
-$lightShade-darker-color: var(--lightShade-darker-color);
+$lightShade-color: rgb(240, 242, 236);
+$lightShade-lighter-color: rgb(98.4%, 98.4%, 98.4%);
+$lightShade-darker-color: rgb(83.9%, 85.9%, 79.6%);
 
-$lightAccent-color: var(--lightAccent-color);
-$lightAccent-lighter-color: var(--lightAccent-lighter-color);
-$lightAccent-darker-color: var(--lightAccent-darker-color);
+$lightAccent-color: rgb(51%, 52.2%, 51.4%);
+$lightAccent-lighter-color: rgb(63.9%, 64.7%, 64.3%);
+$lightAccent-darker-color: rgb(38.8%, 40.8%, 39.6%);
 
-$darkShade-color: var(--darkShade-color);
-$darkShade-lighter-color: var(--darkShade-lighter-color);
-$darkShade-darker-color: var(--darkShade-darker-color);
+$darkShade-color: rgb(27.8%, 24.7%, 26.7%);
+$darkShade-lighter-color: rgb(42.7%, 38.4%, 41.2%);
+$darkShade-darker-color: rgb(10.2%, 8.6%, 9.8%);
 
-$darkAccent-color: var(--darkAccent-color);
-$darkAccent-lighter-color: var(--darkAccent-lighter-color);
-$darkAccent-darker-color: var(--darkAccent-darker-color);
+$darkAccent-color: rgb(58%, 28.6%, 19.2%);
+$darkAccent-lighter-color: rgb(70.2%, 41.2%, 31.8%);
+$darkAccent-darker-color: rgb(43.5%, 16.9%, 8.2%);
 
 // Fonts
-$primary-font: var(--primary-font);
-$code-font: var(--code-font);
-$brand-font: var(--brand-font);
-
-:export {
-  primaryColor: $primary-color;
-  lightShadeColor: $lightShade-color;
-  lightAccentColor: $lightAccent-color;
-  darkShadeColor: $darkShade-color;
-  darkAccentColor: $darkAccent-color;
-}
+$primary-font: "Roboto", sans-serif;
+$code-font: "Maven Pro", serif;
+$brand-font: "Frank Ruhl Libre", sans-serif;

@@ -7,6 +7,7 @@ import Footer from "./containers/Footer/Footer";
 import AboutSlide from "./containers/AboutSlide/AboutSlide";
 import ScrollLock, { TouchScrollable } from "react-scrolllock";
 import { throttle } from "lodash";
+import PortfolioSlide from "./containers/PortfolioSlide/PortfolioSlide";
 
 class App extends Component {
   state = {
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <Fragment>
         <AboutSlide />
+        <PortfolioSlide />
         <Navbar />
         <ScrollLock
           isActive={this.state.isScrollLock}

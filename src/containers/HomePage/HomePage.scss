@@ -37,6 +37,10 @@
       font-size: 48px;
       text-align: center;
       color: $lightShade-color;
+
+      @media only screen and (max-width: 500px) {
+        font-size: 28px;
+      }
     }
 
     .subtitle {
@@ -48,6 +52,11 @@
       text-align: center;
       color: $lightShade-color;
       width: 417px;
+
+      @media only screen and (max-width: 500px) {
+        font-size: 18px;
+        width: 300px;
+      }
     }
 
     .skill-text {

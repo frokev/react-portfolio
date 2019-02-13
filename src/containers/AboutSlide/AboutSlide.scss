@@ -7,7 +7,7 @@
   background-color: $darkShade-darker-color;
   font-family: $primary-font;
   color: $lightShade-color;
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 470px;
   z-index: 10;
@@ -37,13 +37,19 @@
   }
 
   .button {
-    position: absolute;
-    bottom: calc(72px + 20px);
+    position: relative;
+    bottom: -40px;
     height: 72px;
     width: 420px;
     background-color: $primary-color;
     font-weight: 400;
     font-size: 20px;
     color: $darkShade-color;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      filter: brightness(90%);
+    }
   }
 }

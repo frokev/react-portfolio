@@ -3,3 +3,5 @@ declare module "*.scss" {
   export default content;
 }
 declare module "*.jpg";
+
+declare module "react-scrolllock";

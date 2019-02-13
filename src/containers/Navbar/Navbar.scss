@@ -68,6 +68,12 @@
       grid-column: 1 / span 13;
       justify-content: center;
     }
+
+    @media only screen and (max-width: 500px) {
+      grid-column: 1 / span 13;
+      justify-content: center;
+      padding-left: 40px;
+    }
   }
 
   .buttons-wrapper {

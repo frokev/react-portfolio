@@ -86,10 +86,14 @@
     height: auto;
     z-index: 1;
 
-    button {
+    .button {
+      display: flex;
       font-family: $primary-font;
       font-size: 14px;
+      text-decoration: none;
       background-color: $primary-color;
+      justify-content: center;
+      align-items: center;
       color: $darkShade-color;
       width: 86px;
       border: 0;
@@ -100,7 +104,8 @@
       }
 
       &:hover,
-      &:focus {
+      &:focus,
+      &.active {
         background-color: $primary-color;
         cursor: pointer;
         filter: brightness(90%);
@@ -130,7 +135,11 @@
       width: 70%;
       z-index: 2;
 
-      button {
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
         font-family: $primary-font;
         font-size: 14px;
         background-color: $primary-color;
@@ -144,8 +153,10 @@
         }
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
           background-color: $primary-color;
+          cursor: pointer;
           filter: brightness(90%);
           outline: none;
         }

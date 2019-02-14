@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./styles/main.scss";
 import Navbar from "./containers/Navbar/Navbar";
 import HomePage from "./containers/HomePage/HomePage";
 import WarningMessage from "./components/WarningMessage";
 import Footer from "./containers/Footer/Footer";
 import AboutSlide from "./containers/AboutSlide/AboutSlide";
-import ScrollLock, { TouchScrollable } from "react-scrolllock";
+import ScrollLock from "react-scrolllock";
 import { throttle } from "lodash";
 import PortfolioSlide from "./containers/PortfolioSlide/PortfolioSlide";
+import AboutPage from "./containers/AboutPage/AboutPage";
 
 class App extends Component {
   state = {
@@ -16,22 +18,35 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <AboutSlide />
-        <PortfolioSlide />
-        <Navbar />
-        <ScrollLock
-          isActive={this.state.isScrollLock}
-          accountForScrollbars={false}
-        >
-          <HomePage />
-        </ScrollLock>
-        <Footer />
-        <WarningMessage>
-          This website does not support your browser. Consider upgrading or
-          switching off IE.
-        </WarningMessage>
-      </Fragment>
+      <BrowserRouter>
+        <Fragment>
+          <Navbar />
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return (
+                <Fragment>
+                  <AboutSlide />
+                  <PortfolioSlide />
+                  <ScrollLock
+                    isActive={this.state.isScrollLock}
+                    accountForScrollbars={false}
+                  >
+                    <HomePage />
+                  </ScrollLock>
+                </Fragment>
+              );
+            }}
+          />
+          <Route path="/about" component={AboutPage} />
+          <Footer />
+          <WarningMessage>
+            This website does not support your browser. Consider upgrading or
+            switching off IE.
+          </WarningMessage>
+        </Fragment>
+      </BrowserRouter>
     );
   }
 

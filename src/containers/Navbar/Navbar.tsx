@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { BrowserRouter } from "react-router-dom";
+import NavLink from "react-router-dom/NavLink";
 
 interface IProps {
   children?: React.ReactNode;
@@ -25,27 +27,6 @@ export default class Navbar extends Component<IProps, IState> {
     };
   }
 
-  toggleDrawer = () => {
-    let drawerState = DrawerState.Initial;
-    switch (this.state.drawerState) {
-      case DrawerState.Initial: {
-        drawerState = DrawerState.SlideIn;
-        break;
-      }
-      case DrawerState.SlideIn: {
-        drawerState = DrawerState.SlideOut;
-        break;
-      }
-      case DrawerState.SlideOut: {
-        drawerState = DrawerState.SlideIn;
-      }
-    }
-
-    this.setState((state) => ({
-      drawerState: drawerState
-    }));
-  };
-
   render() {
     return (
       <div className="navbar">
@@ -67,16 +48,45 @@ export default class Navbar extends Component<IProps, IState> {
       </div>
     );
   }
+
+  toggleDrawer = () => {
+    let drawerState = DrawerState.Initial;
+    switch (this.state.drawerState) {
+      case DrawerState.Initial: {
+        drawerState = DrawerState.SlideIn;
+        break;
+      }
+      case DrawerState.SlideIn: {
+        drawerState = DrawerState.SlideOut;
+        break;
+      }
+      case DrawerState.SlideOut: {
+        drawerState = DrawerState.SlideIn;
+      }
+    }
+
+    this.setState((state) => ({
+      drawerState: drawerState
+    }));
+  };
 }
 
 const Buttons = (props: any) => {
   return (
-    <>
-      <button>Home</button>
-      <button>About</button>
-      <button>Portfolio</button>
-      <button>Contact</button>
-    </>
+    <Fragment>
+      <NavLink exact to={"/"} className="button">
+        Home
+      </NavLink>
+      <NavLink to={"/about"} className="button">
+        About
+      </NavLink>
+      <NavLink to={"/portfolio"} className="button">
+        Portfolio
+      </NavLink>
+      <NavLink to={"/contact"} className="button">
+        Contact
+      </NavLink>
+    </Fragment>
   );
 };
 

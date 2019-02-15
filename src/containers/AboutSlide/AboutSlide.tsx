@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import tripImage from "../../assets/kevin_pa_tur.jpg";
-import { throttle } from "lodash";
+import { throttle, Cancelable } from "lodash";
 
 export default class AboutSlide extends Component<any, any> {
   state = {
@@ -25,12 +25,21 @@ export default class AboutSlide extends Component<any, any> {
     );
   }
 
+  throttledHandleScroll:
+    | ((event: any) => void) & Cancelable
+    | undefined = undefined;
+
   componentDidMount() {
-    window.addEventListener("wheel", throttle(this.handleScroll, 300));
+    window.addEventListener(
+      "wheel",
+      (this.throttledHandleScroll = throttle(this.handleScroll, 300))
+    );
   }
 
   componentWillUnmount() {
-    window.removeEventListener("wheel", throttle(this.handleScroll, 300));
+    if (!this.throttledHandleScroll) return;
+    this.throttledHandleScroll.cancel();
+    window.removeEventListener("wheel", this.throttledHandleScroll);
   }
 
   handleScroll = (event: any) => {

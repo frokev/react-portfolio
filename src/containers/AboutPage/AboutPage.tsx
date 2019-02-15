@@ -8,7 +8,9 @@ export default class AboutPage extends Component {
         <div className="content-wrapper">
           <h1 className="page-title">About me</h1>
           <div className="section-about">
-            <img src={tripImage} alt="Image" className="image" />
+            <div className="image-wrapper">
+              <img src={tripImage} alt="Image" className="image" />
+            </div>
             <div className="text-content">
               <p className="paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -35,7 +37,9 @@ export default class AboutPage extends Component {
                 arcu condimentum sed.
               </p>
             </div>
-            <img src={tripImage} alt="Image" className="image" />
+            <div className="image-wrapper">
+              <img src={tripImage} alt="Image" className="image" />
+            </div>
           </div>
         </div>
       </div>

@@ -3,15 +3,17 @@
   font-family: $primary-font;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
+  width: 100%;
   gap: 20px;
+  overflow: hidden;
 
   .content-wrapper {
     background-color: $darkShade-darker-color;
     grid-column: 2 / 13;
     display: grid;
     grid-template-columns: repeat(11, 1fr);
-    gap: 20px;
     padding-bottom: 40px;
+    width: 100%;
     color: $lightShade-color;
 
     @media only screen and (max-width: 1440px) {
@@ -27,6 +29,10 @@
       font-weight: 300;
       font-size: 32px;
       text-align: center;
+
+      @media only screen and (max-width: 500px) {
+        padding-top: 40px;
+      }
     }
 
     .section-about {
@@ -40,6 +46,7 @@
       .text-content {
         display: flex;
         flex-direction: column;
+        width: 100;
 
         .title {
           margin-left: 20px;
@@ -47,8 +54,7 @@
           font-size: 32px;
 
           @media only screen and (max-width: 500px) {
-            text-align: center;
-            margin-left: 0;
+            margin-left: 10px;
             font-size: 24px;
           }
         }
@@ -64,20 +70,23 @@
             font-size: 18px;
             margin: 10px;
             margin-right: 10px;
-            width: 100%;
+            width: 95%;
           }
         }
       }
 
-      .image {
+      .image-wrapper {
+        flex: 0 1 460px;
         margin: 20px;
         padding-top: 10px;
-        height: 300px;
-        object-fit: cover;
-        flex: 0 1 420px;
 
         @media only screen and (max-width: 500px) {
-          margin: 10px;
+          margin: 0;
+        }
+
+        .image {
+          object-fit: cover;
+          width: 100%;
         }
       }
     }

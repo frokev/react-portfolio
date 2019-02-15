@@ -7,9 +7,10 @@ import WarningMessage from "./components/WarningMessage";
 import Footer from "./containers/Footer/Footer";
 import AboutSlide from "./containers/AboutSlide/AboutSlide";
 import ScrollLock from "react-scrolllock";
-import { throttle } from "lodash";
+import { throttle, Cancelable } from "lodash";
 import PortfolioSlide from "./containers/PortfolioSlide/PortfolioSlide";
 import AboutPage from "./containers/AboutPage/AboutPage";
+import PortfolioPage from "./containers/PortfolioPage/PortfolioPage";
 
 class App extends Component {
   state = {
@@ -40,6 +41,7 @@ class App extends Component {
             }}
           />
           <Route path="/about" component={AboutPage} />
+          <Route path="/portfolio" component={PortfolioPage} />
           <Footer />
           <WarningMessage>
             This website does not support your browser. Consider upgrading or
@@ -50,6 +52,7 @@ class App extends Component {
     );
   }
 
+  throttledHandleResize: (() => void) & Cancelable | undefined = undefined;
   componentDidMount() {
     if (window.innerWidth < 1000 || window.innerHeight < 850) {
       this.setState({
@@ -57,11 +60,16 @@ class App extends Component {
       });
     }
 
-    addEventListener("resize", throttle(this.handleResize, 300));
+    addEventListener(
+      "resize",
+      (this.throttledHandleResize = throttle(this.handleResize, 300))
+    );
   }
 
   componentWillUnmount() {
-    removeEventListener("resize", throttle(this.handleResize, 300));
+    if (!this.throttledHandleResize) return;
+    this.throttledHandleResize.cancel();
+    removeEventListener("resize", this.throttledHandleResize);
   }
 
   handleResize = () => {

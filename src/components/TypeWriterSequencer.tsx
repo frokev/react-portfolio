@@ -25,8 +25,6 @@ export default class TypeWriterSequencer extends Component<Props, any> {
     let { index, typingProp } = this.state;
     if (!React.isValidElement(children[index]))
       throw "Child is not a valid ReactElement";
-    /* if (!(children[index] instanceof TypeWriter))
-      throw "Children must be of type TypeWriter"; */
     let childWProps = React.cloneElement(children[index], {
       typing: typingProp,
       onTypingEnd: this.handleTypingEnd
@@ -58,7 +56,7 @@ export default class TypeWriterSequencer extends Component<Props, any> {
         this.setState({
           typingProp: -1
         });
-      }, this.props.pauseBeforeEraseMs);
+      }, pauseBeforeEraseMs);
       return;
     }
     // if done erasing, wait, then type new child

@@ -11,6 +11,7 @@ import { throttle, Cancelable } from "lodash";
 import PortfolioSlide from "./containers/PortfolioSlide/PortfolioSlide";
 import AboutPage from "./containers/AboutPage/AboutPage";
 import PortfolioPage from "./containers/PortfolioPage/PortfolioPage";
+import ContactPage from "./containers/ContactPage/ContactPage";
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
           />
           <Route path="/about" component={AboutPage} />
           <Route path="/portfolio" component={PortfolioPage} />
+          <Route path="/contact" component={ContactPage} />
           <Footer />
           <WarningMessage>
             This website does not support your browser. Consider upgrading or

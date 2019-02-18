@@ -7,45 +7,18 @@
   max-height: fit-content;
   font-family: $primary-font;
 
-  @media only screen and (max-width: 500px) {
-    .content-wrapper {
-      background-color: $lightShade-color;
-
-      .page-title {
-        font-size: 28px;
-        margin-top: 40px;
-      }
-
-      .form-wrapper {
-        margin-top: 40px;
-
-        .input-section {
-          margin: 5px 5px;
-
-          .input-title {
-            margin: 5px 5px;
-          }
-
-          .input-field {
-            margin: 5px 5px;
-          }
-
-          .submit-button {
-            margin: 5px 5px;
-          }
-        }
-      }
-    }
-  }
-
   .content-wrapper {
     display: flex;
-    align-content: center;
+    align-items: center;
     flex-direction: column;
     flex: 0 1 1625px;
     min-height: 960px;
     max-height: fit-content;
     background-color: $darkShade-darker-color;
+
+    @media only screen and (max-width: 1600px) {
+      background-color: $darkShade-color;
+    }
 
     .page-title {
       font-weight: 300;
@@ -54,34 +27,34 @@
       color: $lightShade-color;
       margin: 0;
       margin-top: 80px;
+
+      @media only screen and (max-width: 500px) {
+        margin-top: 40px;
+      }
     }
 
     .form-wrapper {
       display: flex;
       flex-direction: column;
-      align-content: center;
-      height: fit-content;
-      flex: 0 1 490px;
+      align-items: center;
+      width: 420px;
       margin-top: 80px;
 
+      @media only screen and (max-width: 650px) {
+        margin-top: 40px;
+        width: 90%;
+      }
+
       .input-section {
+        position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
+        margin: 10px;
         height: fit-content;
-        margin: 10px 10px;
-
-        .input-title {
-          font-weight: 400;
-          font-size: 14px;
-          flex: 0 1 120px;
-          text-align: right;
-          color: $lightShade-color;
-          margin: 10px 10px;
-        }
+        color: $lightShade-color;
 
         .input-field {
           background-color: $lightShade-color;
@@ -90,25 +63,55 @@
           border-radius: 5px;
           box-shadow: inset 0 0 10px $lightAccent-color;
           height: 35px;
-          flex: 0 1 420px;
-          max-width: 420px;
+          width: 100%;
           padding: 0 10px;
-          margin: 10px 10px;
+          margin: 10px 0;
+
+          @media only screen and (max-width: 1000px) {
+            margin: 0;
+          }
+        }
+
+        .input-title {
+          position: absolute;
+          left: -150px;
+          top: 0;
+          bottom: 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 40px;
+          width: 120px;
+          text-align: right;
+          color: $lightShade-color;
+          margin: 10px;
+
+          @media only screen and (max-width: 1000px) {
+            position: initial;
+            width: auto;
+            justify-self: start;
+            margin: 0;
+          }
         }
 
         .message-field {
           @extend .input-field;
+          font-family: $primary-font;
+          padding: 10px;
           height: 150px;
+          width: 100%;
+          resize: none;
         }
       }
 
       .submit-button {
-        height: 40px;
         flex: 0 1 420px;
-        justify-self: right;
+        max-height: 40px;
+        width: 100%;
+        justify-self: center;
         background-color: $primary-color;
         border: $darkShade-color solid 1px;
-        margin: 10px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
 
         p {
           text-align: center;
@@ -116,6 +119,13 @@
           color: $darkShade-color;
           font-size: 16px;
           font-weight: 400;
+        }
+
+        &:hover,
+        &:focus {
+          outline: none;
+          cursor: pointer;
+          filter: brightness(90%);
         }
       }
     }

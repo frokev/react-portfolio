@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
 import NavLink from "react-router-dom/NavLink";
-import Drawer from "../../components//Drawer/Drawer";
+import Drawer from "../../components/Drawer/Drawer";
 
 export default class Navbar extends Component<any, any> {
   state = {

@@ -33,15 +33,9 @@
     align-self: center;
     color: $darkShade-color;
 
-    /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
     font-feature-settings: "liga";
 
     @media only screen and (max-width: 1000px) {
@@ -52,8 +46,7 @@
 
   .brand {
     font-family: $brand-font;
-    color: $darkAccent-color;
-    filter: brightness(70%);
+    color: $darkAccent-darker-color;
     grid-column: 2 / span 3;
     grid-row: 1;
     align-self: center;

@@ -1,22 +1,23 @@
 .about-page {
+  display: flex;
   background-color: $darkShade-color;
-  font-family: $primary-font;
-  display: grid;
-  grid-template-columns: repeat(13, 1fr);
+  justify-content: center;
   width: 100%;
-  gap: 20px;
-  overflow: hidden;
+  min-height: 960px;
+  max-height: fit-content;
+  font-family: $primary-font;
+  color: $lightShade-color;
 
   .content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 1 1625px;
+    min-height: 960px;
+    max-height: fit-content;
     background-color: $darkShade-darker-color;
-    grid-column: 2 / 13;
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    padding-bottom: 40px;
-    width: 100%;
-    color: $lightShade-color;
 
-    @media only screen and (max-width: 1440px) {
+    @media only screen and (max-width: 1600px) {
       grid-column: 1 / 14;
       background-color: $darkShade-color;
     }
@@ -25,7 +26,6 @@
       margin: 0;
       padding-top: 80px;
       padding-bottom: 40px;
-      grid-column: 1 / 12;
       font-weight: 300;
       font-size: 32px;
       text-align: center;
@@ -37,7 +37,6 @@
     }
 
     .section-about {
-      grid-column: 1 / 12;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;

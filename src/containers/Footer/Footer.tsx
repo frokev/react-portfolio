@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import Container from "../../components/Container";
 
 export default class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <div className="content-wrapper">
+        <Container>
           <p className="copyright-text">© Kevin Frostad</p>
           <div className="link-wrapper">
             <a href="" className="link">
@@ -20,7 +21,7 @@ export default class Footer extends Component {
               Contact
             </a>
           </div>
-        </div>
+        </Container>
       </div>
     );
   }

@@ -6,10 +6,9 @@
   background-color: $darkShade-color;
   border-top: $lightShade-color solid 1px;
 
-  .content-wrapper {
+  .container {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
     justify-content: space-between;
 
     .copyright-text {

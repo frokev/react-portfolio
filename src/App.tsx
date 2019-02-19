@@ -56,7 +56,7 @@ class App extends Component {
 
   throttledHandleResize: (() => void) & Cancelable | undefined = undefined;
   componentDidMount() {
-    if (window.innerWidth < 1000 || window.innerHeight < 850) {
+    if (window.innerWidth < 1000 || window.innerHeight < 950) {
       this.setState({
         isScrollLock: false
       });
@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   handleResize = () => {
-    if (window.innerWidth < 1000 || window.innerHeight < 850) {
+    if (window.innerWidth < 1000 || window.innerHeight < 950) {
       this.setState({
         isScrollLock: false
       });

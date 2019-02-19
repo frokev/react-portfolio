@@ -23,6 +23,7 @@ const Message = styled.div`
   padding-right: 15px;
   border: 10px solid black;
   background-color: papayawhip;
+  z-index: 1000;
 
   span {
     position: absolute;

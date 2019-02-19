@@ -43,7 +43,7 @@ export default class AboutSlide extends Component<any, any> {
   }
 
   handleScroll = (event: any) => {
-    if (window.innerWidth < 1000 || window.innerHeight < 850) return;
+    if (window.innerWidth < 1000 || window.innerHeight < 950) return;
     if (event.deltaY < 0) {
       this.setState({
         className: "about-slide animated slideOutLeft"

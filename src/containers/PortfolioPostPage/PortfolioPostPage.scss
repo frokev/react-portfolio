@@ -1,0 +1,79 @@
+.PortfolioPostPage {
+  display: flex;
+  background-color: $darkShade-color;
+  justify-content: center;
+  width: 100%;
+  min-height: 960px;
+  max-height: fit-content;
+  font-family: $primary-font;
+
+  .container {
+    position: relative;
+    flex-direction: column;
+    min-height: 960px;
+    max-height: fit-content;
+    background-color: $darkShade-darker-color;
+
+    .breadcrumb {
+      position: absolute;
+      left: -5px;
+      width: 1610px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      margin-bottom: 40px;
+      list-style: none;
+      background-color: $darkShade-lighter-color;
+      border-radius: 5px 0 0 5px;
+
+      @media only screen and (max-width: 1610px) {
+        width: 100%;
+        padding: 10px 0;
+        left: 0;
+        border-radius: 0;
+      }
+    }
+
+    .breadcrumb-item {
+      padding-left: 10px;
+
+      .link {
+        text-decoration: none;
+        color: $lightShade-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      // The separator between breadcrumbs (by default, a forward-slash: "/")
+      + .breadcrumb-item {
+        padding-left: 10px;
+
+        &::before {
+          display: inline-block; // Suppress underlining of the separator in modern browsers
+          padding-right: 10px;
+          color: black;
+          content: ">";
+        }
+      }
+
+      // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
+      // without `<ul>`s. The `::before` pseudo-element generates an element
+      // *within* the .breadcrumb-item and thereby inherits the `text-decoration`.
+      //
+      // To trick IE into suppressing the underline, we give the pseudo-element an
+      // underline and then immediately remove it.
+      + .breadcrumb-item:hover::before {
+        text-decoration: underline;
+      }
+      // stylelint-disable-next-line no-duplicate-selectors
+      + .breadcrumb-item:hover::before {
+        text-decoration: none;
+      }
+
+      &.active {
+        color: $lightAccent-lighter-color;
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ import PortfolioSlide from "./containers/PortfolioSlide/PortfolioSlide";
 import AboutPage from "./containers/AboutPage/AboutPage";
 import PortfolioPage from "./containers/PortfolioPage/PortfolioPage";
 import ContactPage from "./containers/ContactPage/ContactPage";
+import PortfolioPostPage from "./containers/PortfolioPostPage/PortfolioPostPage";
 
 class App extends Component {
   state = {
@@ -42,7 +43,8 @@ class App extends Component {
             }}
           />
           <Route path="/about" component={AboutPage} />
-          <Route path="/portfolio" component={PortfolioPage} />
+          <Route exact path="/portfolio" component={PortfolioPage} />
+          <Route path="/portfolio/post" component={PortfolioPostPage} />
           <Route path="/contact" component={ContactPage} />
           <Footer />
           <WarningMessage>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavLink from "react-router-dom/NavLink";
 import portfolioImg from "../../assets/portfolio-img.jpg";
 
 export default class PortfolioPage extends Component {
@@ -8,7 +9,7 @@ export default class PortfolioPage extends Component {
         <div className="content-wrapper">
           <h1 className="page-title">My awesome portfolio</h1>
           <div className="cards-wrapper">
-            <div className="card">
+            <NavLink to="/portfolio/post" className="card">
               <div className="image-wrapper">
                 <img src={portfolioImg} alt="Portfolio image" />
                 <h2 className="card-title">Best project ever</h2>
@@ -19,7 +20,7 @@ export default class PortfolioPage extends Component {
                   Aliquam at porttitor sem.  Aliquam erat volutpat.
                 </p>
               </div>
-            </div>
+            </NavLink>
             <div className="card">
               <div className="image-wrapper">
                 <img src={portfolioImg} alt="Portfolio image" />

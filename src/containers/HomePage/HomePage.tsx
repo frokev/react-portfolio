@@ -5,8 +5,7 @@ import Icon, { EIcon } from "../../components/Icon";
 // @ts-ignore
 import * as Typewriter from "react-typewriter";
 import TypeWriterSequencer from "../../components/TypeWriterSequencer";
-import Footer from "../Footer/Footer";
-import AboutSlide from "../AboutSlide/AboutSlide";
+import ReactDOM from "react-dom";
 
 export interface Props {
   children?: React.ReactNode;
@@ -15,12 +14,6 @@ export interface Props {
 export interface State {}
 
 export default class HomePage extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="HomePage">
@@ -60,5 +53,9 @@ export default class HomePage extends Component<Props, State> {
         </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 }

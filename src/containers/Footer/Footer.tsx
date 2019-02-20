@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "../../components/Container";
+import NavLink from "react-router-dom/NavLink";
 
 export default class Footer extends Component {
   render() {
@@ -8,18 +9,18 @@ export default class Footer extends Component {
         <Container>
           <p className="copyright-text">© Kevin Frostad</p>
           <div className="link-wrapper">
-            <a href="" className="link">
+            <NavLink to="/" className="link">
               Home
-            </a>
-            <a href="" className="link">
+            </NavLink>
+            <NavLink to="/about" className="link">
               About
-            </a>
-            <a href="" className="link">
+            </NavLink>
+            <NavLink to="/portfolio" className="link">
               Portfolio
-            </a>
-            <a href="" className="link">
+            </NavLink>
+            <NavLink to="contact" className="link">
               Contact
-            </a>
+            </NavLink>
           </div>
         </Container>
       </div>

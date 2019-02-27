@@ -1,6 +1,6 @@
 .about-slide {
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   justify-items: center;
   align-items: center;
@@ -10,7 +10,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 470px;
+  width: 420px;
   z-index: 10;
 
   .title {
@@ -22,15 +22,16 @@
   }
 
   .image {
-    height: 305px;
-    width: 100%;
+    height: 250px;
+    width: 390px;
+    border-radius: 5px;
     object-fit: cover;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
 
   .paragraph {
     height: 260px;
-    width: 420px;
+    width: 390px;
     text-align: start;
     font-weight: 100;
     font-size: 20px;
@@ -38,10 +39,10 @@
   }
 
   .button {
-    position: relative;
-    bottom: -40px;
+    position: absolute;
+    bottom: 20px;
     height: 72px;
-    width: 420px;
+    width: 390px;
     background-color: $primary-color;
     font-weight: 400;
     font-size: 20px;

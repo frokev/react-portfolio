@@ -24,18 +24,22 @@ class App extends Component {
       <BrowserRouter>
         <Fragment>
           <Navbar />
-          <Route exact path="/">
-            <Fragment>
-              <AboutSlide />
-              <PortfolioSlide />
-              <ScrollLock
-                isActive={this.state.isScrollLock}
-                accountForScrollbars={false}
-              >
-                <HomePage />
-              </ScrollLock>
-            </Fragment>
-          </Route>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Fragment>
+                <AboutSlide />
+                <PortfolioSlide />
+                <ScrollLock
+                  isActive={this.state.isScrollLock}
+                  accountForScrollbars={false}
+                >
+                  <HomePage />
+                </ScrollLock>
+              </Fragment>
+            )}
+          />
           <Route path="/about" component={AboutPage} />
           <Route exact path="/portfolio" component={PortfolioPage} />
           <Route path="/portfolio/post" component={PortfolioPostPage} />
@@ -52,7 +56,7 @@ class App extends Component {
 
   throttledHandleResize: (() => void) & Cancelable | undefined = undefined;
   componentDidMount() {
-    if (window.innerWidth < 1000 || window.innerHeight < 950) {
+    if (window.innerWidth < 1000 || window.innerHeight < 650) {
       this.setState({
         isScrollLock: false
       });
@@ -71,7 +75,7 @@ class App extends Component {
   }
 
   handleResize = () => {
-    if (window.innerWidth < 1000 || window.innerHeight < 950) {
+    if (window.innerWidth < 1000 || window.innerHeight < 730) {
       this.setState({
         isScrollLock: false
       });

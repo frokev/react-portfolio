@@ -16,9 +16,7 @@ export default class AboutSlide extends Component<any, any> {
         <p className="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
           porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et
-          faucibus arcu condimentum sed. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat.
-          Donec placerat nisl magna, et faucibus arcu condimentum sed.
+          faucibus arcu condimentum sed.
         </p>
         <button className="button">Read more</button>
       </div>
@@ -43,7 +41,7 @@ export default class AboutSlide extends Component<any, any> {
   }
 
   handleScroll = (event: any) => {
-    if (window.innerWidth < 1000 || window.innerHeight < 950) return;
+    if (window.innerWidth < 1000 || window.innerHeight < 730) return;
     if (event.deltaY < 0) {
       this.setState({
         className: "about-slide animated slideOutLeft"

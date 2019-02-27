@@ -47,7 +47,7 @@ export default class PortfolioSlide extends Component {
   }
 
   handleScroll = (event: any) => {
-    if (window.innerWidth < 1000 || window.innerHeight < 950) return;
+    if (window.innerWidth < 1000 || window.innerHeight < 730) return;
     if (event.deltaY < 0) {
       this.setState({
         className: "portfolio-slide animated slideOutRight"

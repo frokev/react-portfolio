@@ -22,26 +22,30 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Navbar />
-        <Route exact path="/" component={Fragment}>
-          <AboutSlide />
-          <PortfolioSlide />
-          <ScrollLock
-            isActive={this.state.isScrollLock}
-            accountForScrollbars={false}
-          >
-            <HomePage />
-          </ScrollLock>
-        </Route>
-        <Route path="/about" component={AboutPage} />
-        <Route exact path="/portfolio" component={PortfolioPage} />
-        <Route path="/portfolio/post" component={PortfolioPostPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Footer />
-        <WarningMessage>
-          This website does not support your browser. Consider upgrading or
-          switching off IE.
-        </WarningMessage>
+        <Fragment>
+          <Navbar />
+          <Route exact path="/">
+            <Fragment>
+              <AboutSlide />
+              <PortfolioSlide />
+              <ScrollLock
+                isActive={this.state.isScrollLock}
+                accountForScrollbars={false}
+              >
+                <HomePage />
+              </ScrollLock>
+            </Fragment>
+          </Route>
+          <Route path="/about" component={AboutPage} />
+          <Route exact path="/portfolio" component={PortfolioPage} />
+          <Route path="/portfolio/post" component={PortfolioPostPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Footer />
+          <WarningMessage>
+            This website does not support your browser. Consider upgrading or
+            switching off IE.
+          </WarningMessage>
+        </Fragment>
       </BrowserRouter>
     );
   }

@@ -1,6 +1,4 @@
 import React, { Component, ReactHTML, Fragment } from "react";
-// @ts-ignore
-import { TypeWriter } from "react-typewriter";
 
 interface Props {
   className?: string;

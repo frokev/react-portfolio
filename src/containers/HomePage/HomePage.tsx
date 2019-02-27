@@ -5,15 +5,13 @@ import Icon, { EIcon } from "../../components/Icon";
 // @ts-ignore
 import * as Typewriter from "react-typewriter";
 import TypeWriterSequencer from "../../components/TypeWriterSequencer";
-import ReactDOM from "react-dom";
+import axios from "axios";
 
 export interface Props {
   children?: React.ReactNode;
 }
 
-export interface State {}
-
-export default class HomePage extends Component<Props, State> {
+export default class HomePage extends Component<Props, any> {
   render() {
     return (
       <div className="HomePage">
